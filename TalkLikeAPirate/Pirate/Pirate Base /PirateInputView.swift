@@ -35,7 +35,9 @@ struct PirateInputView: View {
                 
                 TextEditor(text: $text)
                     .focused($isTextEditorFocused)
-                    .background(Color.clear)
+                    .scrollContentBackground(.hidden)
+                    .foregroundColor(.black)
+                    .background(.white)
                     .frame(maxWidth: .infinity)
                     .frame(height: 220)
                     .cornerRadius(20)
@@ -43,7 +45,7 @@ struct PirateInputView: View {
                     .padding(.top)
                     .toolbar {
                         ToolbarItem(placement: .keyboard) {
-                            Button("Done") {
+                            Button("Dismiss Keyboard") {
                                 isTextEditorFocused = false // Dismiss keyboard
                             }
                         }
