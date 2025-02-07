@@ -12,16 +12,16 @@ extension APIClient {
     
     
     /// Fetches a pirate-themed translation for a given text using the Fun Translations API.
-        ///
-        /// This method constructs a GET request to the API endpoint, adding the input text as a query parameter.
-        /// The API responds with a JSON object containing the translated text.
-        ///
-        /// - Parameter text: The input string to be translated into pirate language.
-        /// - Returns: A `PirateResponse` object containing the translated text.
-        /// - Throws: An `APIClientError` if the request fails or the response cannot be decoded.
-     func getPirateTranslation(text: String) async throws -> PirateResponse {
+    ///
+    /// This method constructs a GET request to the API endpoint, adding the input text as a query parameter.
+    /// The API responds with a JSON object containing the translated text.
+    ///
+    /// - Parameter text: The input string to be translated into pirate language.
+    /// - Returns: A `PirateResponse` object containing the translated text.
+    /// - Throws: An `APIClientError` if the request fails or the response cannot be decoded.
+    func getPirateTranslation(text: String) async throws -> PirateResponse {
         let logger = OSLog(subsystem: Constants.bundleName, category: "Fetching Pirate Translation")
-        let endpoint = Endpoints.baseURL
+        let endpoint = Endpoints.baseURL + ConvertTypes.pirate.rawValue
         let params: [String: Any] = ["text": text]
         
         do {

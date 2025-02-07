@@ -14,8 +14,6 @@ class PriateInputViewModel: ObservableObject {
     var errorMessage: String?
     var pirateTranslationText: String?
     
-    
-    
     func getPirateTranslation(from text: String) async {
         status = .fetching
         

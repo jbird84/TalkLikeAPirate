@@ -1,6 +1,7 @@
 {
   "images" : [
     {
+      "filename" : "76407AAD-ED70-44B6-9571-68EB7F34FEC2 (1) 1.png",
       "idiom" : "universal",
       "platform" : "ios",
       "size" : "1024x1024"
@@ -12,6 +13,7 @@
           "value" : "dark"
         }
       ],
+      "filename" : "8F11AC68-3841-4B0F-8620-57D3504F3974 (1).png",
       "idiom" : "universal",
       "platform" : "ios",
       "size" : "1024x1024"
@@ -23,6 +25,7 @@
           "value" : "tinted"
         }
       ],
+      "filename" : "76407AAD-ED70-44B6-9571-68EB7F34FEC2 (1).png",
       "idiom" : "universal",
       "platform" : "ios",
       "size" : "1024x1024"

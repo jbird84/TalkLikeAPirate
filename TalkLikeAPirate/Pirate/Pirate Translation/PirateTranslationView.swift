@@ -12,7 +12,6 @@ struct PirateTranslationView: View {
     var onDisappear: () -> Void
     
     var body: some View {
-        
         VStack {
             Text("🏴‍☠️ Pirate Translation 🏴‍☠️")
                 .font(.largeTitle)
@@ -32,7 +31,21 @@ struct PirateTranslationView: View {
         .frame(maxWidth: .infinity)
         .background(Color.blue.gradient)
         .onDisappear {
-            onDisappear() // Reset viewModel when user goes back
+            onDisappear()
+        }
+        .navigationBarBackButtonHidden(true)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+                Button(action: {
+                    onDisappear()
+                }) {
+                    HStack {
+                        Image(systemName: "chevron.left")
+                        Text("Back")
+                    }
+                    .foregroundStyle(Color.black.opacity(0.8))
+                }
+            }
         }
     }
 }
