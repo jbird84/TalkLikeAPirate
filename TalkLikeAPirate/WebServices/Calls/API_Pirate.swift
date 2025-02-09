@@ -19,9 +19,9 @@ extension APIClient {
     /// - Parameter text: The input string to be translated into pirate language.
     /// - Returns: A `PirateResponse` object containing the translated text.
     /// - Throws: An `APIClientError` if the request fails or the response cannot be decoded.
-    func getPirateTranslation(text: String) async throws -> PirateResponse {
+    func getTranslation(of text: String, with character: String) async throws -> PirateResponse {
         let logger = OSLog(subsystem: Constants.bundleName, category: "Fetching Pirate Translation")
-        let endpoint = Endpoints.baseURL + ConvertTypes.pirate.rawValue
+        let endpoint = Endpoints.baseURL + character
         let params: [String: Any] = ["text": text]
         
         do {

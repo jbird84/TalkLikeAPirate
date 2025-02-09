@@ -12,4 +12,5 @@ struct Endpoints {
 
 enum ConvertTypes: String {
     case pirate = "pirate.json"
+    case yoda = "yoda.json"
 }
