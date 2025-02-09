@@ -1,5 +1,5 @@
 //
-//  PirateInputView.swift
+//  InputView.swift
 //  TalkLikeAPirate
 //
 //  Created by Kinney Kare on 2/6/25.
@@ -7,17 +7,20 @@
 
 import SwiftUI
 
-struct PirateInputView: View {
-    @StateObject var viewModel: PriateInputViewModel
+struct InputView: View {
+    @StateObject var viewModel: InputViewModel
     @Binding var text: String
     @Binding var showEmptyTextAlert: Bool
     @Binding var showErrorAlert: Bool
     @FocusState private var isTextEditorFocused: Bool
     
+    var topImageName: String
+    var generateButtonColor: Color
+    
     var body: some View {
         VStack {
             HStack(alignment: .top) {
-                Image("pirate")
+                Image(topImageName)
                     .resizable()
                     .frame(width: 400, height: 400)
                     .padding(.top, 10)
@@ -46,7 +49,7 @@ struct PirateInputView: View {
                     .toolbar {
                         ToolbarItem(placement: .keyboard) {
                             Button("Dismiss Keyboard") {
-                                isTextEditorFocused = false // Dismiss keyboard
+                                isTextEditorFocused = false
                             }
                         }
                     }
@@ -59,7 +62,7 @@ struct PirateInputView: View {
                     showEmptyTextAlert = true
                 } else {
                     Task {
-                        await viewModel.getPirateTranslation(from: text)
+                        await viewModel.getTranslation(from: text)
                         if case .failure(_) = viewModel.status {
                             showErrorAlert = true
                         }
@@ -68,7 +71,7 @@ struct PirateInputView: View {
             } label: {
                 ZStack {
                     RoundedRectangle(cornerRadius: 20)
-                        .fill(.piratePink.gradient)
+                        .fill(generateButtonColor.gradient)
                         .frame(height: 50)
                         .frame(maxWidth: .infinity)
                     Text("Generate!")
@@ -87,5 +90,5 @@ struct PirateInputView: View {
 }
 
 #Preview {
-    PirateInputView(viewModel: PriateInputViewModel(), text: .constant(""), showEmptyTextAlert: .constant(false), showErrorAlert: .constant(false))
+    InputView(viewModel: InputViewModel(), text: .constant(""), showEmptyTextAlert: .constant(false), showErrorAlert: .constant(false), topImageName: "yoda", generateButtonColor: .yodaGreen)
 }

@@ -1,5 +1,5 @@
 //
-//  PriateBaseView.swift
+// BaseView.swift
 //  TalkLikeAPirate
 //
 //  Created by Kinney Kare on 2/6/25.
@@ -7,17 +7,18 @@
 
 import SwiftUI
 
-struct PriateBaseView: View {
+struct BaseView: View {
     
-    @StateObject var viewModel = PriateInputViewModel()
+    @StateObject var viewModel = InputViewModel()
     @State private var text = ""
     @State private var showEmptyTextAlert = false
     @State private var showErrorAlert = false
     @State private var navigateToTranslation = false
     
+    var inputViewTopImageName: String
+    var inputViewGenerateButtonColor: Color
     
     var body: some View {
-        NavigationStack {
             VStack {
                 switch viewModel.status {
                 case .fetching:
@@ -30,7 +31,7 @@ struct PriateBaseView: View {
                             }
                     }
                 default:
-                    PirateInputView(viewModel: viewModel, text: $text, showEmptyTextAlert: $showEmptyTextAlert, showErrorAlert: $showErrorAlert)
+                    InputView(viewModel: viewModel, text: $text, showEmptyTextAlert: $showEmptyTextAlert, showErrorAlert: $showErrorAlert, topImageName: inputViewTopImageName, generateButtonColor: inputViewGenerateButtonColor)
                 }
             }
             .background(Color.black.gradient)
@@ -50,7 +51,6 @@ struct PriateBaseView: View {
                     }
                 }
             }
-        }
     }
 }
 

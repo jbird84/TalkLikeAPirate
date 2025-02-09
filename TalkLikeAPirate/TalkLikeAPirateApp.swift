@@ -11,7 +11,7 @@ import SwiftUI
 struct TalkLikeAPirateApp: App {
     var body: some Scene {
         WindowGroup {
-            PriateBaseView()
+            HomeView()
         }
     }
 }

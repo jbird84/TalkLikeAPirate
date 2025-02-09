@@ -8,17 +8,17 @@
 import SwiftUI
 
 @Observable
-class PriateInputViewModel: ObservableObject {
+class InputViewModel: ObservableObject {
     
     var status: FetchStatus = .notStarted
     var errorMessage: String?
     var pirateTranslationText: String?
     
-    func getPirateTranslation(from text: String) async {
+    func getTranslation(from text: String) async {
         status = .fetching
         
         let loadingTask = Task {
-            try? await Task.sleep(nanoseconds: 3_000_000_000) //2 seconds
+            try? await Task.sleep(nanoseconds: 3_000_000_000) //3 seconds
         }
         
         do {
