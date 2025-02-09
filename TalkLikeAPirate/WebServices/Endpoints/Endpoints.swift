@@ -9,8 +9,3 @@
 struct Endpoints {
     static let baseURL = "https://api.funtranslations.com/translate/"
 }
-
-enum ConvertTypes: String {
-    case pirate = "pirate.json"
-    case yoda = "yoda.json"
-}

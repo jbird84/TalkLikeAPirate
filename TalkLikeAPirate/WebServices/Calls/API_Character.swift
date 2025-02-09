@@ -1,5 +1,5 @@
 //
-//  API_Pirate.swift
+//  API_Character.swift
 //  TalkLikeAPirate
 //
 //  Created by Kinney Kare on 2/6/25.
@@ -11,12 +11,12 @@ import OSLog
 extension APIClient {
     
     
-    /// Fetches a pirate-themed translation for a given text using the Fun Translations API.
+    /// Fetches a Character-themed translation for a given text using the Fun Translations API.
     ///
     /// This method constructs a GET request to the API endpoint, adding the input text as a query parameter.
     /// The API responds with a JSON object containing the translated text.
     ///
-    /// - Parameter text: The input string to be translated into pirate language.
+    /// - Parameter text: The input string to be translated into chosen character language.
     /// - Returns: A `PirateResponse` object containing the translated text.
     /// - Throws: An `APIClientError` if the request fails or the response cannot be decoded.
     func getTranslation(of text: String, with character: String) async throws -> PirateResponse {
