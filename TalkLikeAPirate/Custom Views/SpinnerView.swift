@@ -41,5 +41,5 @@ struct SpinnerView: View {
 }
 
 #Preview {
-    SpinnerView(spinningImageName: "greenLightSabre", translatingText: "Translating to Yoda Speak...")
+    SpinnerView(spinningImageName: "pigNose", translatingText: "Translating to Yoda Speak...")
 }

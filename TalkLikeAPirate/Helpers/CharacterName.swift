@@ -8,4 +8,5 @@
 enum CharacterName: String {
     case pirate
     case yoda
+    case pig = "pig-latin"
 }

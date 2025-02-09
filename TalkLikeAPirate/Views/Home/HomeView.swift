@@ -18,12 +18,17 @@ struct HomeView: View {
                 VStack {
                     
                     NavigationLink(destination: BaseView(spinnerViewImageName: "pirateShip", spinnerViewText: "Translating to Pirate Speak...", characterName: CharacterName.pirate.rawValue, inputViewGenerateButtonColor: .piratePink)) {
-                        IconButtonWithText(imageName: "whitePirate", textBelowImage: "Pirate")
+                        IconButtonWithText(imageName: "whitePirate", textBelowImage: "Pirate", imageWidth: 160, imageHeight: 160)
                     }
                     .foregroundStyle(Color.white.opacity(0.3))
                     
                     NavigationLink(destination: BaseView(spinnerViewImageName: "greenLightSabre", spinnerViewText: "Translating to Yoda Speak...", characterName: CharacterName.yoda.rawValue, inputViewGenerateButtonColor: .yodaGreen)) {
                         IconButtonWithText(imageName: "whiteYoda", textBelowImage: "Yoda")
+                    }
+                    .foregroundStyle(Color.white.opacity(0.3))
+                    
+                    NavigationLink(destination: BaseView(spinnerViewImageName: "pigNose", spinnerViewText: "Translating to Pig Latin...", characterName: CharacterName.pig.rawValue, inputViewGenerateButtonColor: .pigPink)) {
+                        IconButtonWithText(imageName: "whitePig", textBelowImage: "Pig Latin")
                     }
                     .foregroundStyle(Color.white.opacity(0.3))
                 }

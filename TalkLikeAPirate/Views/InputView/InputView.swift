@@ -91,5 +91,5 @@ struct InputView: View {
 }
 
 #Preview {
-    InputView(viewModel: InputViewModel(), text: .constant(""), showEmptyTextAlert: .constant(false), showErrorAlert: .constant(false), topImageName: "yoda", generateButtonColor: .yodaGreen)
+    InputView(viewModel: InputViewModel(), text: .constant(""), showEmptyTextAlert: .constant(false), showErrorAlert: .constant(false), topImageName: "pig", generateButtonColor: .pigPink)
 }

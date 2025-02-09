@@ -10,6 +10,8 @@ import SwiftUI
 struct IconButtonWithText: View {
     var imageName: String
     var textBelowImage: String
+    var imageWidth: Double = 117
+    var imageHeight: Double = 120
     
     var body: some View {
         VStack {
@@ -17,7 +19,7 @@ struct IconButtonWithText: View {
             Image(imageName)
                 .resizable()
                 .scaledToFill()
-                .frame(width: 140, height: 140)
+                .frame(width: imageWidth, height: imageHeight)
                 .foregroundColor(.white)
                 .background(
                     Circle()
@@ -38,5 +40,5 @@ struct IconButtonWithText: View {
 }
 
 #Preview {
-    IconButtonWithText(imageName: "whitePirate", textBelowImage: "Pirate")
+    IconButtonWithText(imageName: "whitePig", textBelowImage: "Pirate")
 }

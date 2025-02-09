@@ -14,12 +14,15 @@ struct TranslationView: View {
     
     private let translationTitles: [String: String] = [
            "pirate": "🏴‍☠️ Pirate Translation 🏴‍☠️",
-           "yoda": "🛰️ Yoda Translation 🛰️"
+           "yoda": "🛰️ Yoda Translation 🛰️",
+           "pig-latin": "🐷 Pig Latin Translation 🐷"
        ]
     
     private let translationBackgroundColors: [String: Color] = [
         "pirate": .piratePink,
-        "yoda": .yodaGreen
+        "yoda": .yodaGreen,
+        "pig-latin": .pigPink
+        
        ]
     
     private var translationTitle: String {
@@ -34,6 +37,8 @@ struct TranslationView: View {
         VStack {
             Text(translationTitle)
                 .font(.largeTitle)
+                .lineLimit(1)
+                .minimumScaleFactor(0.5)
                 .foregroundStyle(.white)
                 .padding()
             VStack {
@@ -43,6 +48,7 @@ struct TranslationView: View {
                     .padding()
                     .background(Color.black.opacity(0.8))
                     .cornerRadius(15)
+                    .padding(.top, 40)
             }
             .padding(.horizontal, 20)
             Spacer()
@@ -67,15 +73,10 @@ struct TranslationView: View {
             }
         }
     }
-    
-    enum TransistionTitle: String {
-        case pirate = "🏴‍☠️ Pirate Translation 🏴‍☠️"
-        case yoda = "🛰️ Yoda Translation 🛰️"
-    }
 }
 
 
 
 #Preview {
-    TranslationView(characterName: "pirate", translatedText: "Wow, this turned out great!", onDisappear: {})
+    TranslationView(characterName: "pig-latin", translatedText: "Wow, this turned out great!", onDisappear: {})
 }
