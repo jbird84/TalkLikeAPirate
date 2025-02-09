@@ -17,15 +17,15 @@ extension APIClient {
     /// The API responds with a JSON object containing the translated text.
     ///
     /// - Parameter text: The input string to be translated into chosen character language.
-    /// - Returns: A `PirateResponse` object containing the translated text.
+    /// - Returns: A `CharacterResponse` object containing the translated text.
     /// - Throws: An `APIClientError` if the request fails or the response cannot be decoded.
-    func getTranslation(of text: String, with character: String) async throws -> PirateResponse {
+    func getTranslation(of text: String, with character: String) async throws -> CharacterResponse {
         let logger = OSLog(subsystem: Constants.bundleName, category: "Fetching Pirate Translation")
         let endpoint = Endpoints.baseURL + character
         let params: [String: Any] = ["text": text]
         
         do {
-            let responseData: PirateResponse = try await APIClient.dataRequest(endpoint: endpoint, method: .get, parameter: params, forObject: PirateResponse.self)
+            let responseData: CharacterResponse = try await APIClient.dataRequest(endpoint: endpoint, method: .get, parameter: params, forObject: CharacterResponse.self)
             
             return responseData
         } catch {
